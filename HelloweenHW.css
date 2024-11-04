@@ -1,0 +1,194 @@
+body { 
+    font-family: 'Creepster', cursive, Arial, sans-serif; 
+    background-color: black; 
+    color: #e1e1e1; 
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
+} 
+ 
+.fixed-menu { 
+    position: fixed; 
+    background-color: #111; 
+    top: 0; 
+    width: 100%; 
+    color: white; 
+    padding: 10px 0; 
+    text-align: center; 
+    z-index: 1000; 
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.5); 
+} 
+ 
+.fixed-menu ul { 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+} 
+ 
+.fixed-menu li { 
+    display: inline; 
+    margin: 0 20px; 
+} 
+ 
+.fixed-menu a { 
+    color: #e1e1e1; 
+    text-decoration: none; 
+} 
+ 
+.fixed-menu a:hover { 
+    color: #ff6347 
+} 
+ 
+.sticky-header { 
+    position: sticky; 
+    top: 60px; 
+    background-color: #222; 
+    color: #ff6347; 
+    padding: 10px; 
+    font-size: 24px; 
+    z-index: 500; 
+    text-shadow: 2px 2px black; 
+    border-bottom: 2px solid #333; 
+} 
+ 
+.section { 
+    padding: 40px 20px; 
+    margin: 20px 0; 
+    background-color: #333; 
+    color:  #ffcc00; 
+    border-left: 5px solid #ff6347; 
+} 
+ 
+.pumpkin-container { 
+    position: relative; 
+    margin: 50px 0; 
+    height: 200px; 
+    text-align: center; 
+} 
+ 
+.pumpkin { 
+    position: absolute; 
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 150px; 
+    transition: transform 0.3s; 
+} 
+ 
+.pumpkin:hover{ 
+    transform: translateX(-50%) scale(1.2); 
+} 
+ 
+.pumpkin-text { 
+    position: absolute; 
+    top: 180px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-size: 14px; 
+    color: #ffcc00; 
+} 
+
+.relative-container {
+    position: relative;
+    border-left: 3px solid #ff6347;
+    padding: 20px;
+    margin: 30px 0;
+    background-color: #1a1a1a;
+}
+
+.block-container {
+    position: relative;
+    text-align: center;
+    padding: 30px 0;
+    margin: 50px 0;
+    background-color: #1a1a1a;
+}
+
+.example-block {
+    position: relative;
+    text-align: center;
+    padding: 20px 40px 20px 40px;
+    margin: 30px 200px 30px 200px;
+    background-color: #111;
+    border: 3px solid #ff4500;
+    border-radius: 10px;
+}
+
+.text-color {
+    background-color: #333;
+    color: #ff4500;
+    margin: 1px 380px 1px 380px;
+    border-radius: 5px;
+}
+
+.scary-text {
+    font-size: 32px;
+    color: #ff6347;
+    margin: 40px 0;
+    text-align: center;
+    animation: flicker 1s infinite
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+
+}
+ 
+.ghost-button { 
+    display: block; 
+    padding: 10px 10px; 
+    font-size: 18px; 
+    color: #ff6347; 
+    background-color: transparent; 
+    border: 2px solid #ff6347; 
+    cursor: pointer; 
+    transition: all 0.3s; 
+    position: relative; 
+    z-index: 1; 
+    margin: 20px auto; 
+} 
+ 
+.ghost-button:hover, 
+.ghost-button:focus { 
+    background-color: #ff6347; 
+    color: #0d0d0d; 
+    outline: none; 
+} 
+ 
+.ghost { 
+    position: fixed; 
+    bottom: 100px; 
+    left: -100px; 
+    width: 200px; 
+    height: 200px; 
+    opacity: 0; 
+    transform: rotate(0deg); 
+    transition: opacity 0.3s; 
+} 
+ 
+@keyframes ghost { 
+    0% { 
+        transform: translate(0, 0) rotate(0deg); 
+        opacity: 1; 
+    } 
+    30% { 
+        transform: translate(25vw, -25vh) rotate(45deg); 
+    } 
+    70% {
+        transform: translate(75vw, -25vw) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, -100vh) rotate(90deg);
+    }
+}
+
+.ghost-button:focus + .ghost {
+    animation: ghost 8s ease-in-out forwards;
+    opacity: 1;
+}
